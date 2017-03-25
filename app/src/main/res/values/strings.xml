@@ -1,6 +1,10 @@
 <resources>
-    <string name="app_name">SCF</string>
+    <string name="app_name">Springfield Christian Family</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Titles for Main Screen tabs -->
+    <string name="tab_events_title">Events</string>
+    <string name="tab_locations_title">Locations</string>
+    <string name="tab_contact_us_title">Contact Us</string>
 </resources>
