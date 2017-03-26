@@ -7,4 +7,18 @@
     <string name="tab_events_title">Events</string>
     <string name="tab_locations_title">Locations</string>
     <string name="tab_contact_us_title">Contact Us</string>
+
+    <!-- Contact Us fragment -->
+    <string name="ministry_centre_intro">Our Ministry Centre is the central meeting point for our staff, pastors and gives a space for the community to receive help in the form of counsel, food provision, financial assistance, prayer and more.\n\nTo speak with one of our pastors during working hours, it’s best to make an appointment, either contacting them directly or booking through reception.</string>
+    <string name="ministry_centre_banner_label">Ministry Centre</string>
+    <string name="email_address_general_enquiry">info@wccare.org.au</string>
+    <string name="email_subject_general_enquiry">General Enquiry</string>
+    <string name="general_enquiry"><u>General Enquiry</u></string>
+    <string name="label_email">Email:</string>
+    <string name="opening_hours">9am – 3pm, Mon – Thurs. \nFriday by appointment only.</string>
+    <string name="label_opening_hours">Opening Hours:</string>
+    <string name="address">389 Old Logan Road, Camira</string>
+    <string name="label_address">Address:</string>
+    <string name="phone_number">(07) 3818 2915</string>
+    <string name="label_phone">Phone:</string>
 </resources>

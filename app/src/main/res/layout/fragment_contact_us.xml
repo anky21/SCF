@@ -1,13 +1,110 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingBottom="@dimen/margin_16dp"
     tools:context="me.anky.scf.ContactUsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical">
 
-</FrameLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="120dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ministry_centre_banner" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:shadowColor="@android:color/black"
+                android:shadowDx="4"
+                android:shadowDy="4"
+                android:shadowRadius="2"
+                android:text="@string/ministry_centre_banner_label"
+                android:textColor="@android:color/white"
+                android:textSize="30sp" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/margin_16dp"
+            android:text="@string/ministry_centre_intro"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/margin_8dp"
+            android:paddingLeft="@dimen/margin_16dp"
+            android:paddingStart="@dimen/margin_16dp"
+            android:text="@string/tab_contact_us_title"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Title" />
+
+        <android.support.v7.widget.GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingEnd="@dimen/margin_16dp"
+            android:paddingLeft="@dimen/margin_16dp"
+            android:paddingRight="@dimen/margin_16dp"
+            android:paddingStart="@dimen/margin_16dp"
+            app:columnCount="2"
+            app:orientation="horizontal"
+            app:rowCount="4">
+
+            <TextView
+                style="@style/GridLayoutTextView"
+                android:text="@string/label_phone"
+                android:textStyle="bold" />
+
+            <TextView
+                style="@style/GridLayoutTextView"
+                android:autoLink="phone"
+                android:text="@string/phone_number"
+                android:textColor="@color/cyan_500"
+                android:textIsSelectable="true" />
+
+            <TextView
+                style="@style/GridLayoutTextView"
+                android:text="@string/label_address"
+                android:textStyle="bold" />
+
+            <TextView
+                style="@style/GridLayoutTextView"
+                android:text="@string/address"
+                android:textIsSelectable="true" />
+
+            <TextView
+                style="@style/GridLayoutTextView"
+                android:text="@string/label_opening_hours"
+                android:textStyle="bold" />
+
+            <TextView
+                style="@style/GridLayoutTextView"
+                android:text="@string/opening_hours"
+                android:textIsSelectable="true" />
+
+            <TextView
+                style="@style/GridLayoutTextView"
+                android:text="@string/label_email"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/compose_email_tv"
+                style="@style/GridLayoutTextView"
+                android:text="@string/general_enquiry"
+                android:textColor="@color/red_a200" />
+
+        </android.support.v7.widget.GridLayout>
+    </LinearLayout>
+</ScrollView>

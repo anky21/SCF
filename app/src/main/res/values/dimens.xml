@@ -7,4 +7,12 @@
     <!-- Main Screen Tab -->
     <dimen name="tab_label">12sp</dimen>
     <dimen name="custom_tab_layout_height">60dp</dimen>
+
+    <!-- Margins and paddings -->
+    <dimen name="margin_0dp">0dp</dimen>
+    <dimen name="margin_2dp">2dp</dimen>
+    <dimen name="margin_4dp">4dp</dimen>
+    <dimen name="margin_8dp">8dp</dimen>
+    <dimen name="margin_12dp">12dp</dimen>
+    <dimen name="margin_16dp">16dp</dimen>
 </resources>
