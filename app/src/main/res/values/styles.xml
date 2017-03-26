@@ -12,7 +12,7 @@
     <style name="MainScreenTab" parent="Widget.Design.TabLayout">
         <item name="tabIndicatorColor">@android:color/white</item>
         <item name="tabSelectedTextColor">@android:color/white</item>
-        <item name="tabBackground">@color/cyan_500</item>
+        <item name="tabIndicatorHeight">0dp</item>
         <item name="tabMaxWidth">0dp</item>
         <item name="tabGravity">fill</item>
         <item name="tabMode">fixed</item>
