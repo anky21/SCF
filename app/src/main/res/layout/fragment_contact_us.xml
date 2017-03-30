@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/margin_16dp"
+    android:clipToPadding="false"
     tools:context="me.anky.scf.ContactUsFragment">
 
     <LinearLayout
@@ -40,7 +41,7 @@
             android:layout_height="wrap_content"
             android:padding="@dimen/margin_16dp"
             android:text="@string/ministry_centre_intro"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+            android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
         <TextView
             android:layout_width="wrap_content"
