@@ -30,4 +30,15 @@
         <item name="android:textAppearance">@style/Base.TextAppearance.AppCompat.Small</item>
     </style>
 
+    <!-- Location detail TextView -->
+    <style name="LocationDetailTextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">@dimen/margin_16dp</item>
+        <item name="android:paddingStart">@dimen/margin_16dp</item>
+        <item name="android:paddingRight">@dimen/margin_16dp</item>
+        <item name="android:paddingEnd">@dimen/margin_16dp</item>
+        <item name="android:textIsSelectable">true</item>
+    </style>
+
 </resources>

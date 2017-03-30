@@ -1,0 +1,118 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="me.anky.scf.LocationDetailFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/pastor_family_IV"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/springfield_campus" />
+
+        <TextView
+            android:id="@+id/campus_name_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:paddingBottom="@dimen/margin_8dp"
+            android:paddingTop="@dimen/margin_8dp"
+            android:text="Springfield Campus"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingEnd="@dimen/margin_16dp"
+            android:paddingLeft="@dimen/margin_16dp"
+            android:paddingRight="@dimen/margin_16dp"
+            android:paddingStart="@dimen/margin_16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/service_start"
+                android:textColor="@color/cyan_700"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/meeting_time_TV"
+                style="@style/LocationDetailTextView"
+                android:text="9:30am, Sunday Mornings" />
+        </LinearLayout>
+
+        <TextView
+            style="@style/LocationDetailTextView"
+            android:text="@string/campus_location"
+            android:textColor="@color/cyan_700"
+            android:textSize="20sp" />
+
+
+        <TextView
+            android:id="@+id/meeting_venue_TV"
+            style="@style/LocationDetailTextView"
+            android:textColor="@color/primary_text_color"
+            android:text="Woodcrest State College" />
+
+        <TextView
+            android:id="@+id/meeting_address_TV"
+            style="@style/LocationDetailTextView"
+            android:text="38 Nev Smith Dr, Springfield" />
+
+        <TextView
+            android:id="@+id/meeting_building_TV"
+            style="@style/LocationDetailTextView"
+            android:textStyle="italic"
+            android:text="Senior School Auditorium" />
+
+        <ImageView
+            android:id="@+id/pastor1_IV"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:paddingTop="@dimen/margin_16dp"
+            android:paddingBottom="@dimen/margin_16dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/pastor_bennekom" />
+
+        <TextView
+            android:id="@+id/pastor1_name_TV"
+            style="@style/LocationDetailTextView"
+            android:layout_gravity="center"
+            android:textColor="@color/cyan_700"
+            android:text="Ps. John Deb van Bennekom" />
+
+        <TextView
+            android:id="@+id/pastor1_bg_tv"
+            style="@style/LocationDetailTextView"
+            android:text="John and Deborah were part of the planting team for SCF 20 years ago and they continue to be passionate about pastoring and developing people as well as connecting new people to Jesus in our community. They love when the Church is mobilized locally and globally. \n\nFamily is a great joy with five adult children and they enjoy sailing, walking and being active in this beautiful nation. John is a bit of an Australian history buff and Deb is involved in leadership development here and in Central Asia."/>
+
+        <ImageView
+            android:id="@+id/pastor2_IV"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:paddingTop="@dimen/margin_16dp"
+            android:paddingBottom="@dimen/margin_16dp"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/pastor2_name_TV"
+            style="@style/LocationDetailTextView"
+            android:layout_gravity="center"
+            android:textColor="@color/cyan_700" />
+
+        <TextView
+            android:id="@+id/pastor2_bg_tv"
+            style="@style/LocationDetailTextView" />
+
+    </LinearLayout>
+
+</ScrollView>
