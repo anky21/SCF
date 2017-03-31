@@ -41,4 +41,21 @@
         <item name="android:textIsSelectable">true</item>
     </style>
 
+    <!-- Pastor Image CardView -->
+    <style name="PastorImageCardView">
+        <item name="android:layout_width">@dimen/pastor_image_size</item>
+        <item name="android:layout_height">@dimen/pastor_image_size</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginBottom">@dimen/margin_12dp</item>
+        <item name="android:layout_marginTop">@dimen/margin_12dp</item>
+        <item name="cardCornerRadius">@dimen/pastor_cardview_corner_radius</item>
+    </style>
+
+    <!-- Pastor ImageView -->
+    <style name="PastorImageView">
+        <item name="android:layout_width">@dimen/pastor_image_size</item>
+        <item name="android:layout_height">@dimen/pastor_image_size</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
 </resources>

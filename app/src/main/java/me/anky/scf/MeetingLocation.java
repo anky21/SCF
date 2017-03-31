@@ -1,11 +1,14 @@
 package me.anky.scf;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
  * Created by Anky An on 29/03/2017.
  * anky25@gmail.com
  */
 
-public class MeetingLocation {
+public class MeetingLocation implements Parcelable {
 
     private int mPastorFamilyImageRes;
     private String mCampusName;
@@ -63,6 +66,24 @@ public class MeetingLocation {
         mPastor2Title = pastor2Title;
         mPastor2Bg = pastor2Bg;
         mPastor2ImageRes = pastor2ImageRes;
+    }
+
+    private MeetingLocation(Parcel in){
+        mPastorFamilyImageRes = in.readInt();
+        mCampusName = in.readString();
+        mPastorsNames = in.readString();
+        mMeetingTime = in.readString();
+        mMeetingVenue = in.readString();
+        mMeetingAddress = in.readString();
+        mMeetingBuilding = in.readString();
+        mPastor1Name = in.readString();
+        mPastor1Title = in.readString();
+        mPastor1Bg = in.readString();
+        mPastor1ImageRes = in.readInt();
+        mPastor2Name = in.readString();
+        mPastor2Title = in.readString();
+        mPastor2Bg = in.readString();
+        mPastor2ImageRes = in.readInt();
     }
 
     public int getPastorFamilyImageRes() {
@@ -124,4 +145,42 @@ public class MeetingLocation {
     public int getPastor2ImageRes() {
         return mPastor2ImageRes;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel parcel, int flags) {
+            parcel.writeInt(mPastorFamilyImageRes);
+            parcel.writeString(mCampusName);
+            parcel.writeString(mPastorsNames);
+            parcel.writeString(mMeetingTime);
+            parcel.writeString(mMeetingVenue);
+            parcel.writeString(mMeetingAddress);
+            parcel.writeString(mMeetingBuilding);
+            parcel.writeString(mPastor1Name);
+            parcel.writeString(mPastor1Title);
+            parcel.writeString(mPastor1Bg);
+            parcel.writeInt(mPastor1ImageRes);
+            parcel.writeString(mPastor2Name);
+            parcel.writeString(mPastor2Title);
+            parcel.writeString(mPastor2Bg);
+            parcel.writeInt(mPastor2ImageRes);
+    }
+
+    public static final Parcelable.Creator<MeetingLocation> CREATOR =
+            new Parcelable.Creator<MeetingLocation>() {
+
+                @Override
+                public MeetingLocation createFromParcel(Parcel parcel) {
+                    return new MeetingLocation(parcel);
+                }
+
+                @Override
+                public MeetingLocation[] newArray(int i) {
+                    return new MeetingLocation[i];
+                }
+            };
 }

@@ -21,6 +21,10 @@ import butterknife.ButterKnife;
  */
 public class LocationsFragment extends Fragment {
 
+    public static final String LOCATION_INTENT_TEXT = "location_data";
+    
+    private LocationAdapter mLocationAdapter;
+
     @BindView(R.id.location_grid_view)
     GridView mLocationGridView;
 
@@ -30,7 +34,7 @@ public class LocationsFragment extends Fragment {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(final LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_locations, container, false);
         ButterKnife.bind(this, rootView);
@@ -39,7 +43,7 @@ public class LocationsFragment extends Fragment {
                 new MeetingLocation(R.drawable.springfield_campus, "Springfield Campus", "Ps. John & Deb van Bennekom",
                         "9:30am, Sunday Mornings", "Woodcrest State College", "38 Nev Smith Dr, " +
                         "Springfield", "Senior School Auditorium", "Ps. John & Deb van Bennekom",
-                        "Church Elders and Campus Pastors", "John and Deborah were part of the planting team for SCF 20 years ago and they continue to be passionate about pastoring and developing people as well as connecting new people to Jesus in our community. They love when the Church is mobilized locally and globally. \n" +
+                        "Church Elders and Campus Pastors", "John and Deborah were part of the planting team for SCF 20 years ago and they continue to be passionate about pastoring and developing people as well as connecting new people to Jesus in our community. They love when the Church is mobilized locally and globally. \n\n" +
                         "Family is a great joy with five adult children and they enjoy sailing, walking and being active in this beautiful nation. John is a bit of an Australian history buff and Deb is involved in leadership development here and in Central Asia.",
                         R.drawable.pastor_bennekom, null, null, null, 0),
                 new MeetingLocation(R.drawable.augusta_campus, "Augusta Campus", "Ps. Mark & Aime’e Barnes and Ps. Phil Cutcliffe",
@@ -61,14 +65,16 @@ public class LocationsFragment extends Fragment {
                         R.drawable.pastor_grosser, null, null, null, 0),
         };
 
-        LocationAdapter locationAdapter = new LocationAdapter(getContext(), Arrays.asList(meetingLocations));
+        mLocationAdapter = new LocationAdapter(getContext(), Arrays.asList(meetingLocations));
 
-        mLocationGridView.setAdapter(locationAdapter);
+        mLocationGridView.setAdapter(mLocationAdapter);
 
         mLocationGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                MeetingLocation currentMeetingLocation = mLocationAdapter.getItem(position);
                 Intent intent = new Intent(getContext(), LocationDetailActivity.class);
+                intent.putExtra(LOCATION_INTENT_TEXT, currentMeetingLocation);
                 startActivity(intent);
             }
         });

@@ -17,4 +17,8 @@
     <dimen name="margin_16dp">16dp</dimen>
 
     <dimen name="cardview_corner_radius">5dp</dimen>
+
+    <!-- LocationDetailFragment-->
+    <dimen name="pastor_image_size">150dp</dimen>
+    <dimen name="pastor_cardview_corner_radius">75dp</dimen>
 </resources>
