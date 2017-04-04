@@ -9,23 +9,23 @@ public class ChurchEvent {
 
     private String title;
     private String date;
-    private String dateKey;
+    private int dateKey;
     private String location;
     private String time;
-    private String context;
+    private String eventContext;
     private String imageUrl;
 
     public ChurchEvent() {
     }
 
-    public ChurchEvent(String title, String date, String dateKey, String location, String time,
-                       String context, String imageUrl) {
+    public ChurchEvent(String title, String date, int dateKey, String location, String time,
+                       String eventContext, String imageUrl) {
         this.title = title;
         this.date = date;
         this.dateKey = dateKey;
         this.location = location;
         this.time = time;
-        this.context = context;
+        this.eventContext = eventContext;
         this.imageUrl = imageUrl;
     }
 
@@ -45,11 +45,11 @@ public class ChurchEvent {
         this.date = date;
     }
 
-    public String getDateKey() {
+    public int getDateKey() {
         return dateKey;
     }
 
-    public void setDateKey(String dateKey) {
+    public void setDateKey(int dateKey) {
         this.dateKey = dateKey;
     }
 
@@ -69,12 +69,12 @@ public class ChurchEvent {
         this.time = time;
     }
 
-    public String getContext() {
-        return context;
+    public String getEventContext() {
+        return eventContext;
     }
 
-    public void setContext(String context) {
-        this.context = context;
+    public void setEventContext(String eventContext) {
+        this.eventContext = eventContext;
     }
 
     public String getImageUrl() {

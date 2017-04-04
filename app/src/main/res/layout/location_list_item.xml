@@ -25,6 +25,9 @@
         android:id="@+id/campus_name_TV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="@dimen/margin_12dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         tools:text="Springfield Campus" />
 
@@ -32,6 +35,8 @@
         android:id="@+id/meeting_time_TV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:paddingBottom="@dimen/margin_8dp"
         tools:text="9:30am, Sunday Mornings" />
 
     <TextView

@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:clipToPadding="false"
     android:paddingBottom="@dimen/margin_16dp"
-    tools:context="me.anky.scf.LocationDetailFragment">
+    tools:eventContext="me.anky.scf.LocationDetailFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,8 +24,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:paddingBottom="@dimen/margin_8dp"
-            android:paddingTop="@dimen/margin_8dp"
+            android:gravity="center"
+            android:padding="@dimen/margin_12dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Headline"
             tools:text="Springfield Campus" />
 
@@ -37,30 +37,21 @@
             android:textSize="16sp"
             tools:text="Ps. John Deb van Bennekom" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:paddingEnd="@dimen/margin_16dp"
-            android:paddingLeft="@dimen/margin_16dp"
-            android:paddingRight="@dimen/margin_16dp"
-            android:paddingStart="@dimen/margin_16dp">
+        <TextView
+            style="@style/LocationDetailTextView"
+            android:paddingTop="@dimen/margin_8dp"
+            android:text="@string/service_start"
+            android:textColor="@color/cyan_700"
+            android:textSize="20sp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/service_start"
-                android:textColor="@color/cyan_700"
-                android:textSize="20sp" />
-
-            <TextView
-                android:id="@+id/meeting_time_TV"
-                style="@style/LocationDetailTextView"
-                tools:text="9:30am, Sunday Mornings" />
-        </LinearLayout>
+        <TextView
+            android:id="@+id/meeting_time_TV"
+            style="@style/LocationDetailTextView"
+            tools:text="9:30am, Sunday Mornings" />
 
         <TextView
             style="@style/LocationDetailTextView"
+            android:paddingTop="@dimen/margin_8dp"
             android:text="@string/campus_location"
             android:textColor="@color/cyan_700"
             android:textSize="20sp" />
@@ -80,6 +71,7 @@
         <TextView
             android:id="@+id/meeting_building_TV"
             style="@style/LocationDetailTextView"
+            android:paddingTop="@dimen/margin_4dp"
             android:textStyle="italic"
             tools:text="Senior School Auditorium" />
 
