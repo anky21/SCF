@@ -23,4 +23,6 @@
     <!-- Location detail fragment -->
     <string name="service_start">Service Start</string>
     <string name="campus_location">Campus Location</string>
+
+    <string name="add_to_calendar_message">Press longer to add this event to your calendar.</string>
 </resources>

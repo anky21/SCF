@@ -1,7 +1,9 @@
 package me.anky.scf;
 
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.provider.CalendarContract;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
@@ -10,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -90,6 +93,28 @@ public class EventsFragment extends Fragment {
             mLocation = (TextView) v.findViewById(R.id.tv_event_location);
             mTime = (TextView) v.findViewById(R.id.tv_event_time);
             mContext = (TextView) v.findViewById(R.id.tv_event_context);
+
+            v.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(v.getContext(), R.string.add_to_calendar_message,
+                            Toast.LENGTH_SHORT).show();
+                }
+            });
+
+            v.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    Intent intent = new Intent(Intent.ACTION_INSERT)
+                            .setData(CalendarContract.Events.CONTENT_URI)
+                            .putExtra(CalendarContract.Events.TITLE, mTitle.getText().toString())
+                            .putExtra(CalendarContract.Events.EVENT_LOCATION, mLocation.getText().toString());
+                    if (intent.resolveActivity(v.getContext().getPackageManager()) != null) {
+                        v.getContext().startActivity(intent);
+                    }
+                    return true;
+                }
+            });
         }
 
         public void setTitle(String title) {
