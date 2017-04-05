@@ -18,6 +18,9 @@ import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+
+import java.util.Calendar;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -50,11 +53,13 @@ public class EventsFragment extends Fragment {
         ButterKnife.bind(this, rootView);
 
         mRecyclerView.setHasFixedSize(true);
-        mLayoutManager = new StaggeredGridLayoutManager(getResources().getInteger(R.integer.numColumnsGridView), StaggeredGridLayoutManager.VERTICAL);
+        mLayoutManager = new StaggeredGridLayoutManager(getResources()
+                .getInteger(R.integer.numColumnsGridView), StaggeredGridLayoutManager.VERTICAL);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
+        Query eventsQuery = getQuery(mDatabaseReference);
         mAdapter = new FirebaseRecyclerAdapter<ChurchEvent, EventHolder>(ChurchEvent.class,
-                R.layout.event_list_item, EventHolder.class, mDatabaseReference.child("events").getRef()) {
+                R.layout.event_list_item, EventHolder.class, eventsQuery) {
             @Override
             protected void populateViewHolder(EventHolder viewHolder, ChurchEvent model, int position) {
                 viewHolder.setImage(model.getImageUrl());
@@ -73,7 +78,18 @@ public class EventsFragment extends Fragment {
     @Override
     public void onDetach() {
         super.onDetach();
-        mAdapter.cleanup();
+        if (mAdapter != null) {
+            mAdapter.cleanup();
+        }
+    }
+
+    public Query getQuery(DatabaseReference databaseReference) {
+        int currentDate = Utilities.getCurrentDate();
+        // Hide events before the current date
+        Query query = databaseReference.child("events").orderByChild("dateKey")
+                .startAt(currentDate).limitToFirst(getResources()
+                        .getInteger(R.integer.number_of_events_shown));
+        return query;
     }
 
     // ViewHolder for Firebase UI
@@ -105,9 +121,15 @@ public class EventsFragment extends Fragment {
             v.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View v) {
+
+                    Calendar beginTime = Calendar.getInstance();
+                    beginTime.set(2017, Calendar.OCTOBER, 8, 7, 30);
+                    long startMillis = beginTime.getTimeInMillis();
+
                     Intent intent = new Intent(Intent.ACTION_INSERT)
                             .setData(CalendarContract.Events.CONTENT_URI)
                             .putExtra(CalendarContract.Events.TITLE, mTitle.getText().toString())
+                            .putExtra(CalendarContract.EXTRA_EVENT_BEGIN_TIME, startMillis)
                             .putExtra(CalendarContract.Events.EVENT_LOCATION, mLocation.getText().toString());
                     if (intent.resolveActivity(v.getContext().getPackageManager()) != null) {
                         v.getContext().startActivity(intent);
