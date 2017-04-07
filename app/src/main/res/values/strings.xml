@@ -25,4 +25,5 @@
     <string name="campus_location">Campus Location</string>
 
     <string name="add_to_calendar_message">Press longer to add this event to your calendar.</string>
+    <string name="check_event_time_message">Please check the event time later.</string>
 </resources>

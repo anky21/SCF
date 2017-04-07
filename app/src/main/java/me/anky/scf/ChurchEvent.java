@@ -8,6 +8,8 @@ package me.anky.scf;
 public class ChurchEvent {
 
     private String title;
+    private String beginTime;
+    private String endTime;
     private String date;
     private int dateKey;
     private String location;
@@ -18,9 +20,11 @@ public class ChurchEvent {
     public ChurchEvent() {
     }
 
-    public ChurchEvent(String title, String date, int dateKey, String location, String time,
+    public ChurchEvent(String title, String begineTime, String endTime, String date, int dateKey, String location, String time,
                        String eventContext, String imageUrl) {
         this.title = title;
+        this.beginTime = begineTime;
+        this.endTime = endTime;
         this.date = date;
         this.dateKey = dateKey;
         this.location = location;
@@ -31,6 +35,22 @@ public class ChurchEvent {
 
     public String getTitle() {
         return title;
+    }
+
+    public String getBeginTime() {
+        return beginTime;
+    }
+
+    public void setBeginTime(String beginTime) {
+        this.beginTime = beginTime;
+    }
+
+    public String getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
     }
 
     public void setTitle(String title) {
