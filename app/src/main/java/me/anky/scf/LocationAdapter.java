@@ -3,6 +3,7 @@ package me.anky.scf;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,6 +47,14 @@ public class LocationAdapter extends ArrayAdapter<MeetingLocation> {
 
         int pastorFamilyImageResID = currentMeetingLocation.getPastorFamilyImageRes();
         pastorFamilyImageIV.setImageResource(pastorFamilyImageResID);
+
+        // Get the screen width in pixels
+        DisplayMetrics metrics = getContext().getResources().getDisplayMetrics();
+
+        int widthPixels = metrics.widthPixels;
+        int pastorFamilyIvHeight = (int)(widthPixels * 0.8 * 1 / getContext()
+                .getResources().getInteger(R.integer.numColumnsGridView));
+        pastorFamilyImageIV.getLayoutParams().height = pastorFamilyIvHeight;
 
         String campusName = currentMeetingLocation.getCampusName();
         campusNameTV.setText(campusName);

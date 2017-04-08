@@ -66,6 +66,7 @@
         <TextView
             android:id="@+id/meeting_address_TV"
             style="@style/LocationDetailTextView"
+            android:textIsSelectable="true"
             tools:text="38 Nev Smith Dr, Springfield" />
 
         <TextView
