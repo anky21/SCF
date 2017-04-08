@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/margin_16dp"
     android:clipToPadding="false"
+    android:paddingBottom="@dimen/margin_16dp"
     tools:eventContext="me.anky.scf.ContactUsFragment">
 
     <LinearLayout
@@ -52,60 +52,6 @@
             android:text="@string/tab_contact_us_title"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Title" />
 
-        <android.support.v7.widget.GridLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingEnd="@dimen/margin_16dp"
-            android:paddingLeft="@dimen/margin_16dp"
-            android:paddingRight="@dimen/margin_16dp"
-            android:paddingStart="@dimen/margin_16dp"
-            app:columnCount="2"
-            app:orientation="horizontal"
-            app:rowCount="4">
-
-            <TextView
-                style="@style/GridLayoutTextView"
-                android:text="@string/label_phone"
-                android:textStyle="bold" />
-
-            <TextView
-                style="@style/GridLayoutTextView"
-                android:autoLink="phone"
-                android:text="@string/phone_number"
-                android:textColor="@color/cyan_500"
-                android:textIsSelectable="true" />
-
-            <TextView
-                style="@style/GridLayoutTextView"
-                android:text="@string/label_address"
-                android:textStyle="bold" />
-
-            <TextView
-                style="@style/GridLayoutTextView"
-                android:text="@string/address"
-                android:textIsSelectable="true" />
-
-            <TextView
-                style="@style/GridLayoutTextView"
-                android:text="@string/label_opening_hours"
-                android:textStyle="bold" />
-
-            <TextView
-                style="@style/GridLayoutTextView"
-                android:text="@string/opening_hours"
-                android:textIsSelectable="true" />
-
-            <TextView
-                style="@style/GridLayoutTextView"
-                android:text="@string/label_email"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/compose_email_tv"
-                style="@style/GridLayoutTextView"
-                android:text="@string/general_enquiry"
-                android:textColor="@color/red_a200" />
-
-        </android.support.v7.widget.GridLayout>
+        <include layout="@layout/contact_us_sub_gridlayout" />
     </LinearLayout>
 </ScrollView>
