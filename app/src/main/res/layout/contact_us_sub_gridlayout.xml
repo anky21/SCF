@@ -9,51 +9,64 @@
         android:paddingLeft="@dimen/margin_16dp"
         android:paddingRight="@dimen/margin_16dp"
         android:paddingStart="@dimen/margin_16dp"
-        app:columnCount="2"
-        app:orientation="horizontal"
-        app:rowCount="4">
+        app:columnCount="2">
 
         <TextView
             style="@style/GridLayoutTextView"
             android:text="@string/label_phone"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:layout_columnWeight="4"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="1" />
 
         <TextView
             style="@style/GridLayoutTextView"
             android:autoLink="phone"
             android:text="@string/phone_number"
             android:textColor="@color/cyan_500"
-            android:textIsSelectable="true" />
+            android:textIsSelectable="true"
+            app:layout_columnWeight="5"
+            app:layout_gravity="fill" />
 
         <TextView
             style="@style/GridLayoutTextView"
             android:text="@string/label_address"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="2" />
 
         <TextView
             style="@style/GridLayoutTextView"
             android:text="@string/address"
-            android:textIsSelectable="true" />
+            android:textIsSelectable="true"
+            app:layout_gravity="fill" />
 
         <TextView
             style="@style/GridLayoutTextView"
             android:text="@string/label_opening_hours"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:layout_columnWeight="1"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="1" />
 
         <TextView
             style="@style/GridLayoutTextView"
             android:text="@string/opening_hours"
-            android:textIsSelectable="true" />
+            android:textIsSelectable="true"
+            app:layout_gravity="fill" />
 
         <TextView
             style="@style/GridLayoutTextView"
             android:text="@string/label_email"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:layout_gravity="fill"
+            app:layout_rowWeight="1" />
 
         <TextView
             android:id="@+id/compose_email_tv"
             style="@style/GridLayoutTextView"
             android:text="@string/general_enquiry"
-            android:textColor="@color/red_a200" />
+            android:textColor="@color/red_a200"
+            app:layout_gravity="fill" />
     </android.support.v7.widget.GridLayout>
 </merge>
