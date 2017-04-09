@@ -77,5 +77,6 @@
 
             </LinearLayout>
         </LinearLayout>
+        <include layout="@layout/google_map"/>
     </LinearLayout>
 </ScrollView>

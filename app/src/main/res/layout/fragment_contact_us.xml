@@ -53,5 +53,7 @@
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Title" />
 
         <include layout="@layout/contact_us_sub_gridlayout" />
+
+        <include layout="@layout/google_map"/>
     </LinearLayout>
 </ScrollView>

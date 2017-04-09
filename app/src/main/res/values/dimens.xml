@@ -23,4 +23,6 @@
     <dimen name="pastor_cardview_corner_radius">75dp</dimen>
 
     <integer name="number_of_events_shown">7</integer>
+
+    <dimen name="google_map_view_height">160dp</dimen>
 </resources>

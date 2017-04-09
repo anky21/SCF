@@ -26,4 +26,6 @@
 
     <string name="add_to_calendar_message">Press longer to add this event to your calendar.</string>
     <string name="check_event_time_message">Please check the event time later.</string>
+
+    <string name="map_marker_for_ministry_centre">Ministry Centre</string>
 </resources>

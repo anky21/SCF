@@ -1,6 +1,5 @@
 package me.anky.scf;
 
-
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -10,6 +9,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapView;
+import com.google.android.gms.maps.MapsInitializer;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.UiSettings;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -17,15 +25,19 @@ import butterknife.ButterKnife;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ContactUsFragment extends Fragment {
+public class ContactUsFragment extends Fragment implements OnMapReadyCallback{
 
     @BindView(R.id.compose_email_tv)
     TextView mComposeEmailTv;
 
+    @BindView(R.id.map)
+    MapView mMapView;
+
+    GoogleMap mMap;
+
     public ContactUsFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -34,10 +46,44 @@ public class ContactUsFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_contact_us, container, false);
         ButterKnife.bind(this, rootView);
 
+        MapsInitializer.initialize(getContext());
+        mMapView.onCreate(savedInstanceState);
+        mMapView.getMapAsync(this);
+
         // OnClickListener when "General Enquiry" is clicked
         mComposeEmailTv.setOnClickListener(composeEmailOCL);
 
         return rootView;
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        mMapView.onPause();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        mMapView.onDestroy();
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        mMapView.onSaveInstanceState(outState);
+    }
+
+    @Override
+    public void onLowMemory() {
+        super.onLowMemory();
+        mMapView.onLowMemory();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mMapView.onResume();
     }
 
     private View.OnClickListener composeEmailOCL = new View.OnClickListener() {
@@ -52,4 +98,13 @@ public class ContactUsFragment extends Fragment {
         }
     };
 
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        LatLng ministryCentre = new LatLng(-27.642, 152.918);
+        googleMap.addMarker(new MarkerOptions().position(ministryCentre)
+                .title(getString(R.string.map_marker_for_ministry_centre)));
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(ministryCentre, 16));
+        UiSettings settings = googleMap.getUiSettings();
+        settings.setZoomControlsEnabled(true);
+    }
 }
