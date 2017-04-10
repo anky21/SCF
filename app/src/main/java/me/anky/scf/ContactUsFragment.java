@@ -25,7 +25,7 @@ import butterknife.ButterKnife;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ContactUsFragment extends Fragment implements OnMapReadyCallback{
+public class ContactUsFragment extends Fragment implements OnMapReadyCallback {
 
     @BindView(R.id.compose_email_tv)
     TextView mComposeEmailTv;
@@ -65,13 +65,17 @@ public class ContactUsFragment extends Fragment implements OnMapReadyCallback{
     @Override
     public void onDestroy() {
         super.onDestroy();
-        mMapView.onDestroy();
+        if (mMapView != null) {
+            mMapView.onDestroy();
+        }
     }
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        mMapView.onSaveInstanceState(outState);
+        if (mMapView != null) {
+            mMapView.onSaveInstanceState(outState);
+        }
     }
 
     @Override
