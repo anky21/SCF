@@ -42,7 +42,6 @@
         <item name="android:layout_height">@dimen/pastor_image_size</item>
         <item name="android:layout_gravity">center</item>
         <item name="android:layout_marginBottom">@dimen/margin_12dp</item>
-        <item name="android:layout_marginTop">@dimen/margin_12dp</item>
         <item name="cardCornerRadius">@dimen/pastor_cardview_corner_radius</item>
     </style>
 

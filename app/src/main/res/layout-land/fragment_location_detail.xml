@@ -1,0 +1,162 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:paddingBottom="@dimen/margin_16dp"
+    tools:eventContext="me.anky.scf.LocationDetailFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/pastor_family_IV"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            tools:src="@drawable/springfield_campus" />
+
+        <TextView
+            android:id="@+id/campus_name_TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:padding="@dimen/margin_12dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+            tools:text="Springfield Campus" />
+
+        <TextView
+            android:id="@+id/pastors_names_tv"
+            style="@style/LocationDetailTextView"
+            android:layout_gravity="center"
+            android:textColor="@color/cyan_700"
+            android:textSize="16sp"
+            tools:text="Ps. John Deb van Bennekom" />
+
+        <TextView
+            style="@style/LocationDetailTextView"
+            android:paddingTop="@dimen/margin_8dp"
+            android:text="@string/service_start"
+            android:textColor="@color/cyan_700"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/meeting_time_TV"
+            style="@style/LocationDetailTextView"
+            tools:text="9:30am, Sunday Mornings" />
+
+        <TextView
+            style="@style/LocationDetailTextView"
+            android:paddingTop="@dimen/margin_8dp"
+            android:text="@string/campus_location"
+            android:textColor="@color/cyan_700"
+            android:textSize="20sp" />
+
+
+        <TextView
+            android:id="@+id/meeting_venue_TV"
+            style="@style/LocationDetailTextView"
+            android:textColor="@color/primary_text_color"
+            tools:text="Woodcrest State College" />
+
+        <TextView
+            android:id="@+id/meeting_address_TV"
+            style="@style/LocationDetailTextView"
+            android:textIsSelectable="true"
+            tools:text="38 Nev Smith Dr, Springfield" />
+
+        <TextView
+            android:id="@+id/meeting_building_TV"
+            style="@style/LocationDetailTextView"
+            android:paddingTop="@dimen/margin_4dp"
+            android:textStyle="italic"
+            tools:text="Senior School Auditorium" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/margin_8dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="4"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.CardView
+                    style="@style/PastorImageCardView">
+
+                    <ImageView
+                        android:id="@+id/pastor1_IV"
+                        style="@style/PastorImageView"
+                        tools:src="@drawable/pastor_bennekom" />
+                </android.support.v7.widget.CardView>
+
+                <TextView
+                    android:id="@+id/pastor1_name_TV"
+                    style="@style/LocationDetailTextView"
+                    android:layout_gravity="center"
+                    android:text="Ps. John Deb van Bennekom"
+                    android:textColor="@color/cyan_700"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/pastor1_bg_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="6"
+                android:paddingEnd="@dimen/margin_16dp"
+                android:paddingLeft="@dimen/margin_16dp"
+                android:paddingRight="@dimen/margin_16dp"
+                android:paddingStart="@dimen/margin_16dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/margin_8dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="4"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/pastor2_iv_container"
+                    style="@style/PastorImageCardView">
+
+                    <ImageView
+                        android:id="@+id/pastor2_IV"
+                        style="@style/PastorImageView" />
+                </android.support.v7.widget.CardView>
+
+                <TextView
+                    android:id="@+id/pastor2_name_TV"
+                    style="@style/LocationDetailTextView"
+                    android:layout_gravity="center"
+                    android:textColor="@color/cyan_700"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/pastor2_bg_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="6"
+                android:paddingEnd="@dimen/margin_16dp"
+                android:paddingLeft="@dimen/margin_16dp"
+                android:paddingRight="@dimen/margin_16dp"
+                android:paddingStart="@dimen/margin_16dp" />
+            />
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
