@@ -17,6 +17,8 @@ public class MeetingLocation implements Parcelable {
     private String mMeetingVenue;
     private String mMeetingAddress;
     private String mMeetingBuilding;
+    private double mCampusLat;
+    private double mCampusLong;
     private String mPastor1Name;
     private String mPastor1Title;
     private String mPastor1Bg;
@@ -37,6 +39,8 @@ public class MeetingLocation implements Parcelable {
      * @param meetingVenue         is the venue for the weekly meeting
      * @param meetingAddress       is the address for the meeting
      * @param meetingBuilding      is the building name for the meeting
+     * @param campusLat            is the latitude of the campus
+     * @param campusLong           is the longitude of the campus
      * @param pastor1Name          is the name for pastor 1
      * @param pastor1Title         is the title for pastor 1
      * @param pastor1Bg            is the background for pastor 1
@@ -48,7 +52,7 @@ public class MeetingLocation implements Parcelable {
      */
     public MeetingLocation(int pastorFamilyImageRes, String campusName, String pastorsNames,
                            String meetingTime, String meetingVenue, String meetingAddress,
-                           String meetingBuilding, String pastor1Name, String pastor1Title,
+                           String meetingBuilding, double campusLat, double campusLong, String pastor1Name, String pastor1Title,
                            String pastor1Bg, int pastor1ImageRes, String pastor2Name,
                            String pastor2Title, String pastor2Bg, int pastor2ImageRes) {
         mPastorFamilyImageRes = pastorFamilyImageRes;
@@ -58,6 +62,8 @@ public class MeetingLocation implements Parcelable {
         mMeetingVenue = meetingVenue;
         mMeetingAddress = meetingAddress;
         mMeetingBuilding = meetingBuilding;
+        mCampusLat = campusLat;
+        mCampusLong = campusLong;
         mPastor1Name = pastor1Name;
         mPastor1Title = pastor1Title;
         mPastor1Bg = pastor1Bg;
@@ -68,7 +74,7 @@ public class MeetingLocation implements Parcelable {
         mPastor2ImageRes = pastor2ImageRes;
     }
 
-    private MeetingLocation(Parcel in){
+    private MeetingLocation(Parcel in) {
         mPastorFamilyImageRes = in.readInt();
         mCampusName = in.readString();
         mPastorsNames = in.readString();
@@ -76,6 +82,8 @@ public class MeetingLocation implements Parcelable {
         mMeetingVenue = in.readString();
         mMeetingAddress = in.readString();
         mMeetingBuilding = in.readString();
+        mCampusLat = in.readDouble();
+        mCampusLong = in.readDouble();
         mPastor1Name = in.readString();
         mPastor1Title = in.readString();
         mPastor1Bg = in.readString();
@@ -112,6 +120,14 @@ public class MeetingLocation implements Parcelable {
 
     public String getMeetingBuilding() {
         return mMeetingBuilding;
+    }
+
+    public double getCampusLat() {
+        return mCampusLat;
+    }
+
+    public double getCampusLong() {
+        return mCampusLong;
     }
 
     public String getPastor1Name() {
@@ -153,21 +169,23 @@ public class MeetingLocation implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel parcel, int flags) {
-            parcel.writeInt(mPastorFamilyImageRes);
-            parcel.writeString(mCampusName);
-            parcel.writeString(mPastorsNames);
-            parcel.writeString(mMeetingTime);
-            parcel.writeString(mMeetingVenue);
-            parcel.writeString(mMeetingAddress);
-            parcel.writeString(mMeetingBuilding);
-            parcel.writeString(mPastor1Name);
-            parcel.writeString(mPastor1Title);
-            parcel.writeString(mPastor1Bg);
-            parcel.writeInt(mPastor1ImageRes);
-            parcel.writeString(mPastor2Name);
-            parcel.writeString(mPastor2Title);
-            parcel.writeString(mPastor2Bg);
-            parcel.writeInt(mPastor2ImageRes);
+        parcel.writeInt(mPastorFamilyImageRes);
+        parcel.writeString(mCampusName);
+        parcel.writeString(mPastorsNames);
+        parcel.writeString(mMeetingTime);
+        parcel.writeString(mMeetingVenue);
+        parcel.writeString(mMeetingAddress);
+        parcel.writeString(mMeetingBuilding);
+        parcel.writeDouble(mCampusLat);
+        parcel.writeDouble(mCampusLong);
+        parcel.writeString(mPastor1Name);
+        parcel.writeString(mPastor1Title);
+        parcel.writeString(mPastor1Bg);
+        parcel.writeInt(mPastor1ImageRes);
+        parcel.writeString(mPastor2Name);
+        parcel.writeString(mPastor2Title);
+        parcel.writeString(mPastor2Bg);
+        parcel.writeInt(mPastor2ImageRes);
     }
 
     public static final Parcelable.Creator<MeetingLocation> CREATOR =

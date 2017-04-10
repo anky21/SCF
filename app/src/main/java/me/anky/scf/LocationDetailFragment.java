@@ -18,6 +18,9 @@ import butterknife.ButterKnife;
  */
 public class LocationDetailFragment extends Fragment {
 
+    private double mCampusLat;
+    private double mCampusLong;
+
     @BindView(R.id.pastor_family_IV)
     ImageView mPastorFamilyIV;
 
@@ -89,6 +92,8 @@ public class LocationDetailFragment extends Fragment {
             String meetingVenue = meetingLocation.getMeetingVanue();
             String meetingAddress = meetingLocation.getMeetingAddress();
             String meetingBuilding = meetingLocation.getMeetingBuilding(); // May be null
+            mCampusLat = meetingLocation.getCampusLat();
+            mCampusLong = meetingLocation.getCampusLong();
             String pastor1Name = meetingLocation.getPastor1Name();
             String pastor1Title = meetingLocation.getPastor1Title();
             String pastor1Bg = meetingLocation.getPastor1Bg();
