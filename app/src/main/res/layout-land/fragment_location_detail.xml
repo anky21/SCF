@@ -36,44 +36,64 @@
             android:textSize="16sp"
             tools:text="Ps. John Deb van Bennekom" />
 
-        <TextView
-            style="@style/LocationDetailTextView"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:paddingTop="@dimen/margin_8dp"
-            android:text="@string/service_start"
-            android:textColor="@color/cyan_700"
-            android:textSize="20sp" />
+            android:paddingBottom="@dimen/margin_8dp"
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/meeting_time_TV"
-            style="@style/LocationDetailTextView"
-            tools:text="9:30am, Sunday Mornings" />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:orientation="vertical">
 
-        <TextView
-            style="@style/LocationDetailTextView"
-            android:paddingTop="@dimen/margin_8dp"
-            android:text="@string/campus_location"
-            android:textColor="@color/cyan_700"
-            android:textSize="20sp" />
+                <TextView
+                    style="@style/LocationDetailTextView"
+                    android:text="@string/service_start"
+                    android:textColor="@color/cyan_700"
+                    android:textSize="20sp" />
 
+                <TextView
+                    android:id="@+id/meeting_time_TV"
+                    style="@style/LocationDetailTextView"
+                    android:textColor="@color/primary_text_color"
+                    tools:text="9:30am, Sunday Mornings" />
 
-        <TextView
-            android:id="@+id/meeting_venue_TV"
-            style="@style/LocationDetailTextView"
-            android:textColor="@color/primary_text_color"
-            tools:text="Woodcrest State College" />
+                <TextView
+                    style="@style/LocationDetailTextView"
+                    android:paddingTop="@dimen/margin_8dp"
+                    android:text="@string/campus_location"
+                    android:textColor="@color/cyan_700"
+                    android:textSize="20sp" />
 
-        <TextView
-            android:id="@+id/meeting_address_TV"
-            style="@style/LocationDetailTextView"
-            android:textIsSelectable="true"
-            tools:text="38 Nev Smith Dr, Springfield" />
+                <TextView
+                    android:id="@+id/meeting_venue_TV"
+                    style="@style/LocationDetailTextView"
+                    android:textColor="@color/primary_text_color"
+                    tools:text="Woodcrest State College" />
 
-        <TextView
-            android:id="@+id/meeting_building_TV"
-            style="@style/LocationDetailTextView"
-            android:paddingTop="@dimen/margin_4dp"
-            android:textStyle="italic"
-            tools:text="Senior School Auditorium" />
+                <TextView
+                    android:id="@+id/meeting_address_TV"
+                    style="@style/LocationDetailTextView"
+                    android:textIsSelectable="true"
+                    tools:text="38 Nev Smith Dr, Springfield" />
+
+                <TextView
+                    android:id="@+id/meeting_building_TV"
+                    style="@style/LocationDetailTextView"
+                    android:paddingTop="@dimen/margin_4dp"
+                    android:textStyle="italic"
+                    tools:text="Senior School Auditorium" />
+            </LinearLayout>
+
+            <include
+                layout="@layout/google_map"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="6" />
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -88,8 +108,7 @@
                 android:layout_weight="4"
                 android:orientation="vertical">
 
-                <android.support.v7.widget.CardView
-                    style="@style/PastorImageCardView">
+                <android.support.v7.widget.CardView style="@style/PastorImageCardView">
 
                     <ImageView
                         android:id="@+id/pastor1_IV"
@@ -110,11 +129,7 @@
                 android:id="@+id/pastor1_bg_tv"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="6"
-                android:paddingEnd="@dimen/margin_16dp"
-                android:paddingLeft="@dimen/margin_16dp"
-                android:paddingRight="@dimen/margin_16dp"
-                android:paddingStart="@dimen/margin_16dp" />
+                android:layout_weight="6" />
         </LinearLayout>
 
         <LinearLayout
@@ -133,7 +148,6 @@
                 <android.support.v7.widget.CardView
                     android:id="@+id/pastor2_iv_container"
                     style="@style/PastorImageCardView">
-
                     <ImageView
                         android:id="@+id/pastor2_IV"
                         style="@style/PastorImageView" />
@@ -151,11 +165,7 @@
                 android:id="@+id/pastor2_bg_tv"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="6"
-                android:paddingEnd="@dimen/margin_16dp"
-                android:paddingLeft="@dimen/margin_16dp"
-                android:paddingRight="@dimen/margin_16dp"
-                android:paddingStart="@dimen/margin_16dp" />
+                android:layout_weight="6" />
             />
         </LinearLayout>
     </LinearLayout>

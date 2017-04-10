@@ -10,16 +10,25 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapView;
+import com.google.android.gms.maps.MapsInitializer;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.UiSettings;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class LocationDetailFragment extends Fragment {
+public class LocationDetailFragment extends Fragment implements OnMapReadyCallback {
 
     private double mCampusLat;
     private double mCampusLong;
+    private String campusName;
 
     @BindView(R.id.pastor_family_IV)
     ImageView mPastorFamilyIV;
@@ -63,6 +72,9 @@ public class LocationDetailFragment extends Fragment {
     @BindView(R.id.pastor2_bg_tv)
     TextView mPastor2BgTv;
 
+    @BindView(R.id.map)
+    MapView mMapView;
+
     public LocationDetailFragment() {
         // Required empty public constructor
     }
@@ -86,7 +98,7 @@ public class LocationDetailFragment extends Fragment {
             MeetingLocation meetingLocation = intent.getParcelableExtra(LocationsFragment.LOCATION_INTENT_TEXT);
 
             int pastorFamilyImageRes = meetingLocation.getPastorFamilyImageRes();
-            String campusName = meetingLocation.getCampusName();
+            campusName = meetingLocation.getCampusName();
             String pastorsNames = meetingLocation.getPastorsNames();
             String meetingTime = meetingLocation.getMeetingTime();
             String meetingVenue = meetingLocation.getMeetingVanue();
@@ -128,6 +140,51 @@ public class LocationDetailFragment extends Fragment {
                 mPastor2BgTv.setVisibility(View.GONE);
             }
         }
+
+        MapsInitializer.initialize(getActivity());
+        mMapView.onCreate(savedInstanceState);
+        mMapView.getMapAsync(this);
+
         return rootView;
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        mMapView.onPause();
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        mMapView.onDestroy();
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        mMapView.onSaveInstanceState(outState);
+    }
+
+    @Override
+    public void onLowMemory() {
+        super.onLowMemory();
+        mMapView.onLowMemory();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mMapView.onResume();
+    }
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        LatLng campusLocation = new LatLng(mCampusLat, mCampusLong);
+        googleMap.addMarker(new MarkerOptions().position(campusLocation)
+                .title(campusName));
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(campusLocation, 16));
+        UiSettings settings = googleMap.getUiSettings();
+        settings.setZoomControlsEnabled(true);
     }
 }
