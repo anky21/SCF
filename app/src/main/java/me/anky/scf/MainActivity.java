@@ -8,13 +8,13 @@ import android.view.LayoutInflater;
 import android.widget.TextView;
 
 import com.facebook.stetho.Stetho;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
 
 public class MainActivity extends AppCompatActivity {
     private static final String LOG_TAG = MainActivity.class.getSimpleName();
 
-    private DatabaseReference mEventsDatabaseReference;
     private TabLayout tabLayout;
     private int[] tabIcons = {
             R.drawable.tab_icon_events,
@@ -27,8 +27,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mEventsDatabaseReference = FirebaseDatabase.getInstance().getReference().child("events");
-        
+
+        // Initialise Google mobile ads SDK
+        MobileAds.initialize(getApplicationContext(), "ca-app-pub-3940256099942544~3347511713");
+
+        AdView mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        // Start loading the ad in the background.
+        mAdView.loadAd(adRequest);
+        mAdView.setContentDescription(getString(R.string.cd_google_ads));
+
         // Debugging: testing databases and other data
         Stetho.initializeWithDefaults(this);
 

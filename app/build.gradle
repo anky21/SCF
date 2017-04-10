@@ -49,6 +49,7 @@ dependencies {
     compile 'com.android.support:support-v4:25.2.0'
     compile "com.google.firebase:firebase-database:${firebaseVersion}"
     compile "com.google.firebase:firebase-storage:${firebaseVersion}"
+    compile "com.google.firebase:firebase-ads:${firebaseVersion}"
     compile "com.firebaseui:firebase-ui-database:${firebaseUiVersion}"
     compile "com.firebaseui:firebase-ui-storage:${firebaseUiVersion}"
     testCompile 'junit:junit:4.12'

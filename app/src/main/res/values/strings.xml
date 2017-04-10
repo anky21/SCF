@@ -28,4 +28,7 @@
     <string name="check_event_time_message">Please check the event time later.</string>
 
     <string name="map_marker_for_ministry_centre">Ministry Centre</string>
+
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="cd_google_ads">Click to see Google ads</string>
 </resources>

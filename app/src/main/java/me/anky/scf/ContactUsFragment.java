@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
@@ -32,8 +31,6 @@ public class ContactUsFragment extends Fragment implements OnMapReadyCallback {
 
     @BindView(R.id.map)
     MapView mMapView;
-
-    GoogleMap mMap;
 
     public ContactUsFragment() {
         // Required empty public constructor
