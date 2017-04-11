@@ -76,6 +76,9 @@ public class LocationsFragment extends Fragment {
                 Intent intent = new Intent(getContext(), LocationDetailActivity.class);
                 intent.putExtra(LOCATION_INTENT_TEXT, currentMeetingLocation);
                 startActivity(intent);
+
+                // Override the transition
+                getActivity().overridePendingTransition(R.anim.activity_in, R.anim.activity_out);
             }
         });
 

@@ -52,6 +52,7 @@ dependencies {
     compile "com.google.firebase:firebase-ads:${firebaseVersion}"
     compile "com.firebaseui:firebase-ui-database:${firebaseUiVersion}"
     compile "com.firebaseui:firebase-ui-storage:${firebaseUiVersion}"
+    compile "com.google.firebase:firebase-messaging:${firebaseVersion}"
     testCompile 'junit:junit:4.12'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
     compile 'com.google.android.gms:play-services:10.2.0'
