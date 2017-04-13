@@ -13,11 +13,11 @@ Major Features/Technologies
 DEMO
 --------------
 ![alt text](/demo/demo.gif)
+
 ![alt text](/demo/events.png)
 ![alt text](/demo/locations.png)
 ![alt text](/demo/contact1.png)
 ![alt text](/demo/contact2.png)
-![alt text](/demo/location_detail.png)
 
 Pre-requisites
 --------------
