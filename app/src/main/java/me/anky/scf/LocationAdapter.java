@@ -51,10 +51,10 @@ public class LocationAdapter extends ArrayAdapter<MeetingLocation> {
         // Get the screen width in pixels
         DisplayMetrics metrics = getContext().getResources().getDisplayMetrics();
 
-        int widthPixels = metrics.widthPixels;
-        int pastorFamilyIvHeight = (int)(widthPixels * 0.8 * 1 / getContext()
-                .getResources().getInteger(R.integer.numColumnsGridView));
-        pastorFamilyImageIV.getLayoutParams().height = pastorFamilyIvHeight;
+//        int widthPixels = metrics.widthPixels;
+//        int pastorFamilyIvHeight = (int)(widthPixels * 0.8 * 1 / getContext()
+//                .getResources().getInteger(R.integer.numColumnsGridView));
+//        pastorFamilyImageIV.getLayoutParams().height = pastorFamilyIvHeight;
 
         String campusName = currentMeetingLocation.getCampusName();
         campusNameTV.setText(campusName);

@@ -4,12 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.CardView;
-import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
@@ -18,6 +18,7 @@ import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.UiSettings;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
@@ -86,12 +87,12 @@ public class LocationDetailFragment extends Fragment implements OnMapReadyCallba
         View rootView = inflater.inflate(R.layout.fragment_location_detail, container, false);
         ButterKnife.bind(this, rootView);
 
-        // Get the screen width in pixels
-        DisplayMetrics metrics = new DisplayMetrics();
-        getActivity().getWindowManager().getDefaultDisplay().getMetrics(metrics);
-        int widthPixels = metrics.widthPixels;
-        int pastorFamilyIvHeight = (int)(widthPixels * 0.8);
-        mPastorFamilyIV.getLayoutParams().height = pastorFamilyIvHeight;
+//        // Get the screen width in pixels
+//        DisplayMetrics metrics = new DisplayMetrics();
+//        getActivity().getWindowManager().getDefaultDisplay().getMetrics(metrics);
+//        int widthPixels = metrics.widthPixels;
+//        int pastorFamilyIvHeight = (int)(widthPixels * 0.8);
+//        mPastorFamilyIV.getLayoutParams().height = pastorFamilyIvHeight;
 
         Intent intent = getActivity().getIntent();
         if (intent != null) {
